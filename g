@@ -1,0 +1,11 @@
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.0",
+    "helmet": "^3.23.3",
+    "highlight.js": "^9.12.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.20"

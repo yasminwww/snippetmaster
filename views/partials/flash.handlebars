@@ -1,0 +1,18 @@
+{{#if flash }}
+    <div class="{{flash.type}} alert-dismissible fade show" role="alert">
+        {{flash.message}}
+    </div>
+{{/if}}
+
+    {{!-- just to make tha flashmessage go away --}}
+<script>
+    if ('{{flash}}') {
+        $(document).ready(function () {
+            window.setTimeout(function () {
+                $('.alert').fadeTo(500, 0).slideUp(1500, function () {
+                    $(this).remove()
+                })
+            }, 5000)
+        })
+    }
+</script>

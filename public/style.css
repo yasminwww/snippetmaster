@@ -1,0 +1,33 @@
+body {
+    background: url('./clouds.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.jumbotron {
+    background: transparent;
+    color: rgb(38, 43, 49)   
+}
+#killbackground {
+    background-image: none;
+}
+#logout-btn {
+    float: right;
+}
+#btnupl  {
+    float: right;
+}
+.form-control{
+     color: rgba(38, 43, 49);
+    background-color: rgba(250, 249, 249, 0.445);
+    display: inline-block;
+}
+.codesnipp {
+    border: 1px solid;
+    margin-bottom:40px;
+    padding: 20px;
+}
+ul {
+    list-style-type: none;
+  }

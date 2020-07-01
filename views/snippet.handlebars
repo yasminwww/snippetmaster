@@ -1,0 +1,28 @@
+<body id="killbackground">
+  <div class="container">
+    <a href="/logout" id="logout-btn" class="btn btn-outline-dark my-2 my-sm-2">Logout</a>
+
+    <h2>Create! </h2>
+
+    <form method="POST" action="/snippet">
+      <div class="textaria">
+        <br>
+        <textarea class="form-control" name="text" rows="8"></textarea>
+      </div>
+      <br>
+      <button class="btn btn-outline-success my-2 my-sm-0">UpLoad</button>
+    </form>
+    <br>
+    <ul>
+      {{#each snipp}}
+          <div class="codesnipp">
+      <li><pre><code>{{ text }}</code></pre> MadeBy: {{ usernamE }} - At: {{ createdAt }}
+      <a href="/snippet/update/{{ id }}">Update</a> or 
+      <a href="/snippet/delete/{{ id }}">Delete</a>
+      </li>
+      </div>
+      <br>
+ {{/each}}
+    </ul>
+  </div>
+</body>

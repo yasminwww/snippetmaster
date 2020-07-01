@@ -1,0 +1,22 @@
+<body id="killbackground">
+  <div class="container">
+    <a href="/login" id="logout-btn" class="btn btn-dark my-2 my-sm-2">Login</a>
+    <a href="/register" id="logout-btn" class="btn btn-outline-dark my-2 my-sm-2 mr-2">Sign Up</a>
+    <br>
+    <br>
+    <form method="GET" action="/scribble">
+    </form>
+    <br>
+
+    <ul>
+      {{#each znipp}}
+      <div class="codesnipp">
+        <li>
+          <pre><code>{{ text }}</code></pre> MadeBy: {{ usernamE }} - At: {{ createdAt }}
+        </li>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
+  </div>
+</body>
