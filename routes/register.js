@@ -42,6 +42,7 @@ router.route('/register')
 
       snippetUser.save((err, savedUser) => {
         if (err) {
+          console.log('register error: ', err)
           next(err)
           req.session.flash = {
             type: 'alert alert-danger',
