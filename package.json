@@ -2,7 +2,10 @@
   "name": "snippetmaseter",
   "version": "1.0.0",
   "description": "Schoolwork project: Databases and CRUD apps",
-  "main": "home.js",
+  "main": "app.js",
+  "engines": {
+    "node": "10.15.1"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
