@@ -64,7 +64,7 @@ let port = process.env.PORT || 8000
 // connection to DB
 
 
-const uri = `mongodb+srv://yasmin:${process.env.MONGO_PASS}@cluster0.jwdsc.mongodb.net/<dbname>?retryWrites=true&w=majority`
+const uri = process.env.MONGO_URI
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
