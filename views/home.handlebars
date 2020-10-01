@@ -2,6 +2,7 @@
   {{#if admin }}
   <a href="{{usersnippets}}" class="btn btn-outline-danger btn-lg">{{typebtn}}</a>
   {{/if}}
+  {{#unless admin}}
   <h1 class="display-3"> {{{ title }}} </h1>
   <hr class="my-4">
   <p class="lead">
@@ -11,5 +12,5 @@
   <hr class="my-4">
   <a href="/register" class="btn btn-outline-secondary btn-lg">Sign Up</a>
   <a href="/login" class="btn btn-dark btn-lg">Log In</a>
-
+  {{/unless}}
 </div>

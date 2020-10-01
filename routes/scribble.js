@@ -13,12 +13,12 @@ router.route('/scribble').get((req, res, next) => {
 
     let context = {
       admin: req.session.user ? req.session.user : false,
-      znipp: data.map(function (znipp) {
+      scribble: data.map(function (scribble) {
         return {
-          text: znipp.text,
-          createdAt: znipp.createdAt.toISOString().slice(0, 10),
-          usernamE: znipp.username || 'a deleted user',
-          id: znipp._id,
+          text: scribble.text,
+          createdAt: scribble.createdAt.toISOString().slice(0, 10),
+          usernamE: scribble.username || '[Deleted user]',
+          id: scribble._id,
         }
       }),
     }

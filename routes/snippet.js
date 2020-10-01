@@ -41,7 +41,7 @@ router
     textObj.username = req.session.username
 
     // save to DB
-    textObj.save(function (err, savedText) {
+    textObj.save((err, savedText) => {
       if (err) {
         console.log(err)
         return res.status(500).send()
@@ -61,7 +61,7 @@ router
   .post((req, res, next) => {
     Snippet.deleteOne({ _id: req.params.id }, (err) => {
       if (err) {
-        console.log(err)
+        next(err)
       }
       res.redirect('/snippet')
     })
