@@ -59,8 +59,11 @@ ul {
   margin-top: 20px;
 }
 
+.link {
+  color: rgb(255, 255, 255);
+}
 a {
-  color: white;
+  color: rgb(62, 95, 206);
 }
 a:hover {
   color: rgb(193, 195, 197);

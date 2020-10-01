@@ -1,12 +1,12 @@
 /** Made by Yasmin Mushahdi 2018-02 */
 'use strict'
 
-let router = require('express').Router()
-let User = require('../models/user')
+const router = require('express').Router()
+const User = require('../models/user')
 
 router
   .route('/login')
-  .get((req, res, next) => {
+  .get((req, res) => {
     res.render('login', {
       title: 'A snippet on your mind?',
       link: '/register',
@@ -14,15 +14,15 @@ router
     })
   })
 
-  .post((req, res, next) => {
+  .post((req, res) => {
     User.findOne({ username: req.body.username }, (err, user) => {
       if (!user) {
         req.session.flash = {
           type: 'alert alert-danger',
-          message: 'No Snipper with that name or password :(',
+          message: 'No Snipper matched :(',
         }
-        next(err)
-        res.redirect('/login')
+        console.log(err)
+        return res.redirect('/login')
       }
 
       if (user) {
@@ -30,8 +30,9 @@ router
         const usernName = user.username
 
         user.comparePassword(req.body.password, (err, user2) => {
+          console.log(user2)
           if (err) {
-            next(err)
+            console.log(err)
           } else if (!user2) {
             req.session.flash = {
               type: 'alert alert-warning',
@@ -46,7 +47,7 @@ router
             req.session.user = userId
             req.session.username = usernName
           }
-          res.redirect('/snippet')
+          return res.redirect('/snippet')
         })
       }
     })

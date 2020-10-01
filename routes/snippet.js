@@ -1,19 +1,19 @@
 /** Made by Yasmin Mushahdi 2018-02 */
 'use strict'
 
-let router = require('express').Router()
-let Snippet = require('../models/snipp')
+const router = require('express').Router()
+const Snippet = require('../models/snipp')
 
 // get snippetpage and to snippet of user by session
 router
   .route('/snippet')
-  .get((req, res, next) => {
+  .get((req, res) => {
     Snippet.find({ userID: req.session.user }, (err, data) => {
       if (err) {
         console.log(err)
       }
-      let context = {
-        snipp: data.map(function (snipp) {
+      const context = {
+        snipp: data.map((snipp) => {
           return {
             text: snipp.text,
             createdAt: snipp.createdAt.toISOString().slice(0, 10),
@@ -32,7 +32,7 @@ router
   })
 
   // create snippet
-  .post((req, res, next) => {
+  .post((req, res) => {
     let text = req.body.text
 
     const textObj = new Snippet()
@@ -46,7 +46,7 @@ router
         console.log(err)
         return res.status(500).send()
       }
-      return res.status(200).send()
+      res.status(200).send()
     })
     return res.redirect('/snippet')
   })
@@ -54,14 +54,14 @@ router
 // render and delete snippet by id
 router
   .route('/snippet/delete/:id')
-  .get((req, res, next) => {
+  .get((req, res) => {
     res.render('delete', { id: req.params.id })
   })
 
   .post((req, res, next) => {
     Snippet.deleteOne({ _id: req.params.id }, (err) => {
       if (err) {
-        next(err)
+        console.log(err)
       }
       res.redirect('/snippet')
     })
@@ -87,7 +87,7 @@ router
   })
 
   // ( async/await works well with mongose promises), upadate snippet by id
-  .post(async (req, res, next) => {
+  .post(async (req, res) => {
     try {
       let text = req.body.text
 
@@ -102,7 +102,6 @@ router
           text: text,
           createdAt: Date.now(),
         })
-
         return res.redirect('/snippet')
       }
     } catch (error) {

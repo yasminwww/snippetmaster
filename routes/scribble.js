@@ -1,8 +1,8 @@
 /** Made by Yasmin Mushahdi 2018-02 */
 'use strict'
 
-let router = require('express').Router()
-let Snippet = require('../models/snipp')
+const router = require('express').Router()
+const Snippet = require('../models/snipp')
 
 router.route('/scribble').get((req, res, next) => {
   Snippet.find({}, (err, data) => {
