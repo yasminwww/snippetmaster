@@ -38,9 +38,23 @@ body {
   text-decoration: none;
 }
 
-#btnupl {
-  float: right;
+.lead {
+  background-color: rgba(238, 238, 238, 0.459);
+  padding: 20px;
+  font-weight: 300;
 }
+.formwrapper {
+  padding: 20px;
+  background-color: rgba(238, 238, 238, 0.692);
+  width: 600px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 40px;
+  -webkit-box-shadow: 0px 7px 24px -2px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 7px 24px -2px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 7px 24px -2px rgba(0, 0, 0, 0.41);
+}
+
 .form-control {
   color: rgba(38, 43, 49);
   background-color: rgba(250, 249, 249, 0.445);
@@ -67,4 +81,8 @@ a {
 }
 a:hover {
   color: rgb(193, 195, 197);
+}
+
+h2 {
+  color: #212529;
 }

@@ -43,10 +43,6 @@ app.use(
     },
   })
 )
-// app.use((req, res, next) => {
-//   res.locals.session = req.session
-//   next()
-// })
 
 // The flash middleware included to show alerts to the client
 app.use((req, res, next) => {
