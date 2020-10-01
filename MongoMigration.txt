@@ -1,0 +1,4 @@
+yasmin-api: mongodb+srv://<username>:<password>@yasmin-api.rjevu.mongodb.net/yasmin_api?retryWrites=true&w=majority
+
+second : mongodb+srv://<username>:<password>@yasmin-api.rjevu.mongodb.net/yasmin_api?retryWrites=true&w=majority
+second:  mongodb+srv://<username>:<password>@yasmin-api.rjevu.mongodb.net/<dbname>?retryWrites=true&w=majority

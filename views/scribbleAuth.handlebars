@@ -1,7 +1,6 @@
 <body id="killbackground">
   <div class="container">
-    <a href="/logout" id="logout-btn" class="btn btn-outline-dark my-2 my-sm-2">Logout</a>
-    <a href="/snippet" id="showbtn" class="btn btn-outline-dark my-2 my-sm-0">My Snippet Page!</a>
+    <a href="/logout" id="logout-btn" class="logout-btn">Logout</a>
     <br>
     <br>
     <form method="GET" action="/scribble">
@@ -11,7 +10,7 @@
       {{#each znipp}}
       <div class="codesnipp">
         <li>
-          <pre><code>{{ text }}</code></pre> MadeBy: {{ usernamE }} - At: {{ createdAt }}
+          <pre><code>{{ text }}</code></pre> Made by: {{ usernamE }} - At: {{ createdAt }}
         </li>
       </div>
       {{/each}}

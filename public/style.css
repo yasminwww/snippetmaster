@@ -1,33 +1,86 @@
 body {
-    background: url('./clouds.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('./clouds.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .jumbotron {
-    background: transparent;
-    color: rgb(38, 43, 49)   
+  background: transparent;
+  color: rgb(38, 43, 49);
 }
 #killbackground {
-    background-image: none;
+  background-image: none;
 }
-#logout-btn {
-    float: right;
+
+.buttons {
+  background-image: linear-gradient(
+    to right,
+    #ffafbd 0%,
+    #ffc3a0 51%,
+    #ffafbd 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
 }
-#btnupl  {
-    float: right;
+
+.buttons:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
-.form-control{
-     color: rgba(38, 43, 49);
-    background-color: rgba(250, 249, 249, 0.445);
-    display: inline-block;
+/* .btn-dark {*/
+
+.logout-btn a {
+  float: right;
+  background-image: linear-gradient(
+    to right,
+    #e0eafc 0%,
+    #cfdef3 51%,
+    #e0eafc 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+.logout-btn a:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+#btnupl {
+  float: right;
+}
+.form-control {
+  color: rgba(38, 43, 49);
+  background-color: rgba(250, 249, 249, 0.445);
+  display: inline-block;
 }
 .codesnipp {
-    border: 1px solid;
-    margin-bottom:40px;
-    padding: 20px;
+  border: 1px solid;
+  margin-bottom: 40px;
+  padding: 20px;
 }
 ul {
-    list-style-type: none;
-  }
+  list-style-type: none;
+  margin-left: -40px;
+}
+.create-heading {
+  margin-top: 20px;
+}

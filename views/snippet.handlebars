@@ -1,28 +1,29 @@
 <body id="killbackground">
   <div class="container">
-    <a href="/logout" id="logout-btn" class="btn btn-outline-dark my-2 my-sm-2">Logout</a>
-
-    <h2>Create! </h2>
-
+    <h2 class='create-heading'>Create! </h2>
+    <p>Here you can paste your code and save it for later usage. Maybe it was some good looking code, or
+      just something new your learned.
+    </p>
     <form method="POST" action="/snippet">
       <div class="textaria">
         <br>
         <textarea class="form-control" name="text" rows="8"></textarea>
       </div>
       <br>
-      <button class="btn btn-outline-success my-2 my-sm-0">UpLoad</button>
+      <button class="buttons my-2 my-sm-0">UpLoad</button>
     </form>
     <br>
     <ul>
       {{#each snipp}}
-          <div class="codesnipp">
-      <li><pre><code>{{ text }}</code></pre> MadeBy: {{ usernamE }} - At: {{ createdAt }}
-      <a href="/snippet/update/{{ id }}">Update</a> or 
-      <a href="/snippet/delete/{{ id }}">Delete</a>
-      </li>
+      <div class="codesnipp">
+        <li>
+          <pre><code>{{ text }}</code></pre> Made by: {{ usernamE }} - At: {{ createdAt }}
+          <a href="/snippet/update/{{ id }}">Update</a> or
+          <a href="/snippet/delete/{{ id }}">Delete</a>
+        </li>
       </div>
       <br>
- {{/each}}
+      {{/each}}
     </ul>
   </div>
 </body>

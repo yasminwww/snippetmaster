@@ -12,7 +12,6 @@ const exphbs = require('express-handlebars')
 const expressVal = require('express-validator')
 require('dotenv').config()
 
-
 const app = express()
 
 const router = require('./routes/home')(express.Router())
@@ -20,28 +19,34 @@ const router = require('./routes/home')(express.Router())
 app.use(helmet())
 
 app.use(express.static(path.join(__dirname, 'public')))
-app.engine('handlebars', exphbs({defaultLayout: 'main'}))
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(bodyParser.json())
 // to get data from <form>
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(expressVal())
 app.use(cookie())
 
-app.use(session({
-        key: 'user_sid',
-        secret: process.env.COOKIE_SECRET,
-        saveUninitialized: false,
-        resave: false,
-        cookie: {
-          secure: false,
-          // httpsOnly helps protect agains cookie theft/forgery.
-          httpOnly: true,
-          maxAge: 1000 * 60 * 60 * 24
-  }
-}))
+app.use(
+  session({
+    key: 'user_sid',
+    secret: process.env.COOKIE_SECRET,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      secure: false,
+      // httpsOnly helps protect agains cookie theft/forgery.
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24,
+    },
+  })
+)
+app.use((req, res, next) => {
+  res.locals.session = req.session
+  next()
+})
 
 // The flash middleware included to show alerts to the client
 app.use((req, res, next) => {
@@ -62,24 +67,23 @@ app.use('/', require('./routes/register'))
 let port = process.env.PORT || 8000
 
 // connection to DB
-
-
 const uri = process.env.MONGO_URI
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-})
-.then(() => {
-  console.log('MongoDB Connected…')
-})
-.catch(err => console.log(err))
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then(() => {
+    console.log('MongoDB Connected…')
+  })
+  .catch((err) => console.log(err))
 
 app.use('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.clearCookie('user_sid', {path: '/'}).redirect('/')
+    res.clearCookie('user_sid', { path: '/' }).redirect('/')
   })
 })
 
