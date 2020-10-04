@@ -2,7 +2,7 @@
   <div class="container">
     <br>
     <br>
-    All snippets:
+    <h3>All snippets</h3>
     <form method="GET" action="/scribble">
     </form>
     <br>
@@ -10,7 +10,7 @@
       {{#each scribble}}
       <div class="codesnipp">
         <li>
-          <pre><code>{{ text }}</code></pre> MadeBy: {{ usernamE }} - At: {{ createdAt }}
+          <pre><code>{{ text }}</code></pre> Made by: <strong>{{ usernamE }}</strong> | date: {{ createdAt }}
         </li>
       </div>
       {{/each}}

@@ -13,17 +13,25 @@
   <script>hljs.initHighlightingOnLoad();</script>
   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+{{!--  --}}
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="diplay:flex;">
     <a class="navbar-brand" href="/">SnippetySnipp</a>
     {{#unless admin}}
     <a class="nav-item nav-link link" href="/">Home</a>
-    {{/unless}}
     <a class="nav-item nav-link link" href="/scribble">All Snippets</a>
+    <div style="margin-left: auto;">
+      <a class="nav-item nav-link link float-link" href="/register">Signup</a>
+      <a class="nav-item nav-link link float-link" href="/login">Login</a>
+    </div>
+    {{/unless}}
     {{#if admin}}
     <a class="nav-item nav-link link" href="/snippet" class="logout-btn">Create</a>
-    <a class="nav-item nav-link link" href="/logout" id="logout-btn" style="float:right!important;">Logout</a>
+    <a class="nav-item nav-link link" href="/scribble">All Snippets</a>
+    <div style="margin-left: auto;">
+      <a class="nav-item nav-link link" href="/logout" id="logout-btn">Logout</a>
+    </div>
     {{/if}}
   </nav>
   <main>
