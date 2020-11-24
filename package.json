@@ -30,7 +30,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^5.0.0",
     "helmet": "^3.23.3",
-    "highlight.js": "^10.1.1",
+    "highlight.js": "^10.1.2",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.20"
   },
